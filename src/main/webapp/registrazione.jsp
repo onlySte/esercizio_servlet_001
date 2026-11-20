@@ -8,7 +8,19 @@
 	</head>
 	<body>
 	
-		<h3>Registrazione Utente</h3>
+			<h2>Registrazione doPost</h2>
+			
+			<form>
+				<div>
+					<label>username:</label>
+					<input type="text" name="nome"/>
+				</div>
+				<div>
+					<label>email:</label>
+					<input type="email" name="email"/>
+				</div>
+				<button type="submit">Invia</button>
+			</form>
 	
 	</body>
 </html>
