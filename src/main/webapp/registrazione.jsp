@@ -28,7 +28,7 @@
 			<form action="registrazione" method="get">
 				<div>
 					<label>username:</label>
-					<input type="text" nome="nome"/>
+					<input type="text" name="nome"/>
 				</div>
 				<div>
 					<label>email</label>
