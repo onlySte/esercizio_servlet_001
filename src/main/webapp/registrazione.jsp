@@ -10,7 +10,7 @@
 	
 			<h2>Registrazione doPost</h2>
 			
-			<form>
+			<form action="registrazione" method="post">
 				<div>
 					<label>username:</label>
 					<input type="text" name="nome"/>
