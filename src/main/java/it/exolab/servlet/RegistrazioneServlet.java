@@ -28,8 +28,8 @@ public class RegistrazioneServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
-		request.setAttribute("nome", nome);
-		request.setAttribute("email", email);
+		request.setAttribute("nomeDoGet", nome);
+		request.setAttribute("emailDoGet", email);
 		request.getRequestDispatcher("/riepilogo.jsp").forward(request, response);
 	}
 
@@ -37,8 +37,8 @@ public class RegistrazioneServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("nome", request.getParameter("nome"));
-		request.setAttribute("email", request.getParameter("email"));
+		request.setAttribute("nomeDoPost", request.getParameter("nome"));
+		request.setAttribute("emailDoPost", request.getParameter("email"));
 		request.getRequestDispatcher("/riepilogo.jsp").forward(request, response);
 	}
 

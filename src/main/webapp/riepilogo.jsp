@@ -8,5 +8,10 @@
 	</head>
 	<body>
 	
+		<p> ${nomeDoGet} </p>
+		<p> ${emailDoGet}</p>
+	
+		<p> ${nomeDoPost} </p>
+		<p> ${emailDoPost} </p>
 	</body>
 </html>
