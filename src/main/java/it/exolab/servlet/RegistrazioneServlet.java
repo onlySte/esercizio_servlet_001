@@ -59,7 +59,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		dao.insert(utente);
 	
 		request.setAttribute("user", utente);
-		request.getRequestDispatcher("riepilogo.jsp").forward(request, response);
+		request.getRequestDispatcher("conferma-registrazione.jsp").forward(request, response);
 	}
 	
 
