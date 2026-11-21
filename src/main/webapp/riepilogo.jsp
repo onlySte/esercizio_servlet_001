@@ -36,5 +36,9 @@
 	
 		<p> ${nomeDoPost} </p>
 		<p> ${emailDoPost} </p>
+		
+		
+	<div><a href="registrazione.jsp">Torna al form</a></div>
+	
 	</body>
 </html>
