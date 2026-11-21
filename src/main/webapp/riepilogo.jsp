@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="it.exolab.model.Utente" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -36,6 +37,12 @@
 	
 		<p> ${nomeDoPost} </p>
 		<p> ${emailDoPost} </p>
+		
+		
+	<% Utente utente = (Utente) request.getAttribute("user"); %>
+	
+	<p> <%= utente.getNome() %></p>
+	<p> <%= utente.getEmail() %></p>
 		
 		
 	<div><a href="registrazione.jsp">Torna al form</a></div>

@@ -23,6 +23,7 @@
 <!--   <mapper resource="Prodotto.xml"/>
    <mapper resource="cliente.xml"/>
    <mapper resource="ordine.xml"/>-->
+    <mapper resource="utente.xml"/>
     
   </mappers>
 </configuration>
