@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import it.exolab.dao.UtenteDao;
 import it.exolab.model.Utente;
+import it.exolab.service.UtenteService;
 
 /**
  * Servlet implementation class RegistrazioneServlet
@@ -17,6 +18,8 @@ import it.exolab.model.Utente;
 public class RegistrazioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	
+	private UtenteService service = new UtenteService();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -27,7 +30,7 @@ public class RegistrazioneServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	 */	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
@@ -55,11 +58,19 @@ public class RegistrazioneServlet extends HttpServlet {
 		Utente utente = new Utente();
 		utente.setNome(nomeUtente);
 		utente.setEmail(emailUtente);
-		UtenteDao dao = new UtenteDao();
-		dao.insert(utente);
-	
-		request.setAttribute("user", utente);
-		request.getRequestDispatcher("conferma-registrazione.jsp").forward(request, response);
+		
+		if(service.emailEsiste(emailUtente)) {
+			request.setAttribute("errore", "email già esistente");
+			request.getRequestDispatcher("registrazione.jsp").forward(request, response);
+		}
+		else {
+			UtenteDao dao = new UtenteDao();
+			dao.insert(utente);
+		
+			request.setAttribute("user", utente);
+			request.getRequestDispatcher("conferma-registrazione.jsp").forward(request, response);
+		}
+
 	}
 	
 

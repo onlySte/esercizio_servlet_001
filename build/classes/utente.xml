@@ -11,6 +11,16 @@
  	
  	</insert>
  
- 
+ 	<select id="findByEmail" resultMap="utenteMap">
+ 	
+ 		SELECT * FROM utenti WHERE email = #{email}
+ 	
+ 	</select>
+ 	
+ 	<resultMap id="utenteMap" type="it.exolab.model.Utente">
+ 	
+ 		<result property="email" column="email"/>
+ 	
+ 	</resultMap>
  
  </mapper>

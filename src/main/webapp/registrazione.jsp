@@ -8,8 +8,11 @@
 	</head>
 	<body>
 	
-			<h2>Registrazione doPost</h2>
+	<% String erroreLogin = (String) request.getAttribute("errore"); %>
+	
+			<h3>Registrazione doPost</h3>
 			
+	<p> <%= erroreLogin %></p>
 			<form action="registrazione" method="post">
 				<div>
 					<label>username:</label>

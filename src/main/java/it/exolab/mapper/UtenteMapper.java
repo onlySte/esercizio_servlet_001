@@ -6,4 +6,6 @@ public interface UtenteMapper {
 
 	void insert(Utente model);
 	
+	Utente findByEmail(String email);
+	
 }
