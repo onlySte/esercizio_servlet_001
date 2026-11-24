@@ -45,4 +45,25 @@ public class UtenteDao {
 	}
 	
 	
+	public Utente findByEmailAndUsername(Utente model) {
+		//apro la session con MyBatis
+		SqlSession session = MyBatisUtils.getSqlSessionFactory().openSession();
+		
+		try {
+			UtenteMapper mapper = session.getMapper(UtenteMapper.class);
+			Utente utenteTrovato = mapper.findByEmailAndUsername(model);
+			return utenteTrovato;
+			//non serve fare un commit perchè tanto non devo salvare nessuna operazione sul database (essendo una select)
+		}
+		catch(Exception e) {
+			return null;
+		}
+		finally {
+			
+			session.close();
+		}
+		
+	}
+	
+	
 }

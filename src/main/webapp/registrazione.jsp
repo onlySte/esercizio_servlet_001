@@ -13,6 +13,7 @@
 			<h3>Registrazione doPost</h3>
 			
 	<p> <%= erroreLogin %></p>
+	
 			<form action="registrazione" method="post">
 				<div>
 					<label>username:</label>
@@ -39,6 +40,8 @@
 				</div>
 				<button type="submit">Invia</button>
 			</form>
+	
+		<h4><a href="login.jsp">Pagina di Login</a></h4>
 	
 	</body>
 </html>

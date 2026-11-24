@@ -6,7 +6,7 @@ import it.exolab.model.Utente;
 public class UtenteService {
 
 	public boolean emailEsiste(String email) {
-		
+		 
 //		boolean condizione = false;
 		
 		UtenteDao dao = new UtenteDao();
@@ -30,4 +30,24 @@ public class UtenteService {
 	}
 	
 	
+	
+	public boolean verificaUserAndEmail(Utente model) {
+		
+		UtenteDao dao = new UtenteDao();
+		
+		if(model != null) {
+			model = dao.findByEmailAndUsername(model);
+			
+			if(model != null) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
+		}
+		
+	}
 }

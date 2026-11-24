@@ -8,4 +8,5 @@ public interface UtenteMapper {
 	
 	Utente findByEmail(String email);
 	
+	Utente findByEmailAndUsername(Utente model);
 }
