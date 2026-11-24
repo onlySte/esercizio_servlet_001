@@ -8,17 +8,24 @@
 	</head>
 	<body>
 	
-		<form action="" method="get">
+		
+	<% String erroreLogin = (String) request.getAttribute("erroreLogin"); %>
+	
+		<h3> <%= erroreLogin %></h3>
+	
+		<form action="login" method="get">
+		
 			<div>
-				<label>Username :</label>
+				<label>Username : </label>
 				<input type="text" name="nome"/>
 			</div>
 			<div>
-				<label>Email :</label>
+				<label>Email : </label>
 				<input type="email" name="email"/>
 			</div>
+		
 			<button type="submit">Invia</button>
-		</form>
+		</form>	
 	
 	
 	</body>

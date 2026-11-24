@@ -60,7 +60,7 @@ public class RegistrazioneServlet extends HttpServlet {
 		utente.setEmail(emailUtente);
 		
 		if(service.emailEsiste(emailUtente)) {
-			request.setAttribute("errore", "email già esistente");
+			request.setAttribute("errore", "email già esistente !");
 			request.getRequestDispatcher("registrazione.jsp").forward(request, response);
 		}
 		else {
